@@ -15,7 +15,6 @@ public class ProximityListener implements SensorEventListener {
     public ProximityListener(Context context) {
         mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-        mSensorManager.registerListener(this,mSensor,SensorManager.SENSOR_DELAY_FASTEST);
     }
 
     @Override
@@ -30,6 +29,10 @@ public class ProximityListener implements SensorEventListener {
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
 
+    }
+
+    public void startSensor() {
+        mSensorManager.registerListener(this,mSensor,SensorManager.SENSOR_DELAY_FASTEST);
     }
 
     public void stopSensor() {

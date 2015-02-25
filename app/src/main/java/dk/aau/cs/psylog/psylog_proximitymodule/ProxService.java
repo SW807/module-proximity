@@ -7,15 +7,11 @@ import android.os.IBinder;
 public class ProxService extends Service {
 
     private ProximityListener proximityListener;
-    private boolean isRunning;
 
     @Override
     public int onStartCommand(Intent intent, int flag, int startid)
     {
-        if(!isRunning){
-            isRunning = true;
-            proximityListener = new ProximityListener(this);
-        }
+        proximityListener.startSensor();
 
         //Skal være START_STICKY hvis servicen skal køre hele tiden, selv hvis den bliver dræbt. START_NOT_STICKY hjælper når man programmere.
         return Service.START_NOT_STICKY;
@@ -24,8 +20,7 @@ public class ProxService extends Service {
     @Override
     public void onCreate(){
         super.onCreate();
-        isRunning = false;
-
+        proximityListener = new ProximityListener(this);
     }
 
     @Override
