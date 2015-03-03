@@ -1,6 +1,7 @@
 package dk.aau.cs.psylog.psylog_proximitymodule;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,6 +13,8 @@ public class ProximityListener implements SensorEventListener, ISensor {
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
+
+    private int sensorDelay;
 
     public ProximityListener(Context context) {
         mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
@@ -33,10 +36,16 @@ public class ProximityListener implements SensorEventListener, ISensor {
     }
 
     public void startSensor() {
-        mSensorManager.registerListener(this,mSensor,SensorManager.SENSOR_DELAY_FASTEST);
+        mSensorManager.unregisterListener(this);
+        mSensorManager.registerListener(this,mSensor,sensorDelay);
     }
 
     public void stopSensor() {
         mSensorManager.unregisterListener(this);
+    }
+
+    @Override
+    public void sensorParameters(Intent intent) {
+        sensorDelay = intent.getIntExtra("sensorDelay",SensorManager.SENSOR_DELAY_NORMAL);
     }
 }
