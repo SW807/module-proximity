@@ -1,4 +1,4 @@
-package dk.aau.cs.psylog.psylog_proximitymodule;
+package dk.aau.cs.psylog.proximity;
 
 import dk.aau.cs.psylog.module_lib.SuperService;
 

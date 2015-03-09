@@ -1,4 +1,4 @@
-package dk.aau.cs.psylog.psylog_proximitymodule;
+package dk.aau.cs.psylog.proximity;
 
 import android.content.Context;
 import android.content.Intent;
