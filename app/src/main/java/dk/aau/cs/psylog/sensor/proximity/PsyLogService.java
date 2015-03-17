@@ -1,4 +1,4 @@
-package dk.aau.cs.psylog.proximity;
+package dk.aau.cs.psylog.sensor.proximity;
 
 import dk.aau.cs.psylog.module_lib.SensorService;
 
