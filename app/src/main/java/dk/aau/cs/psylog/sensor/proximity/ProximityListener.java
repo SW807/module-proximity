@@ -32,7 +32,7 @@ public class ProximityListener implements SensorEventListener, ISensor {
     public void onSensorChanged(SensorEvent sensorEvent) {
         if (sensorEvent.sensor.getType() == Sensor.TYPE_PROXIMITY) {
             float x = sensorEvent.values[0];
-            Uri uri = Uri.parse(DBAccessContract.DBACCESS_CONTENTPROVIDER + "proximity");
+            Uri uri = Uri.parse(DBAccessContract.DBACCESS_CONTENTPROVIDER + "proximity_proximity");
             ContentValues values = new ContentValues();
             values.put("inProximity", (int)x);
             resolver.insert(uri, values);
