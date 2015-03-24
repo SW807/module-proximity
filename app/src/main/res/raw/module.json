@@ -1,6 +1,7 @@
 {
 	"name": "proximity",
 	"_version": 1.0,
+    "_description": "Measures and stores if anything is in proximity.",
 	"tables": [
 		{
 			"name": "proximity",
