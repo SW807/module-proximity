@@ -1,6 +1,8 @@
 {
 	"name": "proximity",
+    "_userfriendlyname": "Nærheds sensor",
 	"_version": 1.0,
+    "_description": "Måler og opbevarer om der er noget i nærheden.",
 	"tables": [
 		{
 			"name": "proximity",
